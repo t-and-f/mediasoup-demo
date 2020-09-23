@@ -5,6 +5,7 @@ export INTERACTIVE=${INTERACTIVE:="true"}
 export PROTOO_LISTEN_PORT=${PROTOO_LISTEN_PORT:="4443"}
 # export HTTPS_CERT_FULLCHAIN=${HTTPS_CERT_FULLCHAIN:="/service/certs/localhost.crt"}
 # export HTTPS_CERT_PRIVKEY=${HTTPS_CERT_PRIVKEY:="/service/certs/localhost.key"}
+export CERT_FOLDER=${CERT_FOLDER:="/etc/letsencrypt/live/video.smth.social"}
 export HTTPS_CERT_FULLCHAIN=${HTTPS_CERT_FULLCHAIN:="/service/certs/fullchain.pem"}
 export HTTPS_CERT_PRIVKEY=${HTTPS_CERT_PRIVKEY:="/service/certs/privkey.pem"}
 export MEDIASOUP_LISTEN_IP=${MEDIASOUP_LISTEN_IP:="0.0.0.0"}
@@ -34,6 +35,7 @@ docker run \
 	-p ${MEDIASOUP_MIN_PORT}-${MEDIASOUP_MAX_PORT}:${MEDIASOUP_MIN_PORT}-${MEDIASOUP_MAX_PORT}/tcp \
 	-v ${PWD}:/storage \
 	-v ${MEDIASOUP_SRC}:/mediasoup-src \
+	-v ${CERT_FOLDER}:/service/certs \
 	--init \
 	-e DEBUG \
 	-e INTERACTIVE \
