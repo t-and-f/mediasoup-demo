@@ -51,4 +51,5 @@ docker run \
 	-it \
 	--rm \
   --net=host \
+  -d \
 	mediasoup-demo:latest
