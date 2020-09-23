@@ -54,4 +54,4 @@ docker run \
 	--rm \
   --net=host \
   -d \
-	mediasoup-demo:latest
+	eu.gcr.io/something-social-dev/mediasoup-server:latest
