@@ -35,7 +35,6 @@ docker run \
 	-p ${MEDIASOUP_MIN_PORT}-${MEDIASOUP_MAX_PORT}:${MEDIASOUP_MIN_PORT}-${MEDIASOUP_MAX_PORT}/tcp \
 	-v ${PWD}:/storage \
 	-v ${MEDIASOUP_SRC}:/mediasoup-src \
-	-v ${CERT_FOLDER}:/service/certs \
 	--init \
 	-e DEBUG \
 	-e INTERACTIVE \
